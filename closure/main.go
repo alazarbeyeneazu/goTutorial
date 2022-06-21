@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func Do() func() int {
+	a, b := 0, 1
+	return func() int {
+		a, b = b, a+b
+		return b
+	}
+
+}
+
+func main() {
+	f := Do()
+	for x := f(); x < 100; x = f() {
+		fmt.Println(x)
+	}
+
+}
