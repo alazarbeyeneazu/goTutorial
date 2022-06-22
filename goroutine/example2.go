@@ -17,6 +17,8 @@ func counter(ch chan<- int) {
 
 	}
 }
+
+//to
 func main() {
 	var nextId NextId = make(chan int)
 	go counter(nextId)
